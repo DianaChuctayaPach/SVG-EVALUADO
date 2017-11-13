@@ -1,0 +1,86 @@
+body{
+    text-align: center;
+}
+svg{
+    width: 40%;
+    margin-top: 5%;
+}
+
+svg{
+    display: block;
+    margin: 2em auto 0;
+}
+.star {
+  transform: translate3d(0, 180px, 0);
+  animation: subir .5s forwards, zom .6s ease-out forwards;
+}
+
+.stars-bg{
+    stroke-width: 10;
+    stroke-opacity:1; 
+    stroke-dashoffset: 820;
+    stroke-dasharray: 820;
+    animation: borde 1.5s  3s linear forwards; /* .6s --> duracion de la animacion 1s--> tiempo de espera para comenzar la animacion*/
+}
+.stars * {
+  transform-origin: 50% 50%;
+}
+
+
+.star:nth-of-type(1) {
+    animation-delay: .5s, 1.8s;
+  }
+
+.star:nth-of-type(2) {
+    animation-delay: 0s, 1.5s;
+  }
+
+.star:nth-of-type(3) {
+    animation-delay: .8s, 2s;
+  }
+/* --------------------------
+             Keyframes
+--------------------------- */
+@keyframes subir {
+  50% {
+    transform: translate3d(0,-10px,0);
+  }
+  
+  80% {
+    transform: translate3d(0,10px,0);
+  }
+  
+  100% {
+    transform: translate3d(0,0,0);
+  } 
+}
+
+@keyframes zom {
+  0% {
+    transform: scale(1);
+  }
+  
+   50% {
+    transform: scale(1.20) rotate(-10deg);
+    opacity: 2;
+    fill: yellow;
+  }
+  
+    100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes borde{
+    60%{
+        stroke-dashoffset: 628;
+        stroke-width: 4;
+        fill: rgba(229, 245, 7, 0.726);
+    }
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+
+
